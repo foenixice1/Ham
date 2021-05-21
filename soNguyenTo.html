@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thực hành 2</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+<h1>Kiểm tra số nguyên tố</h1>
+<body>
+<h2>Nhập vào số muốn kiểm tra : <input type="text" id="input" oninput="xuly()" /></h2> <br>
+<span id="result"></span>
+<h2 id="kq" ></h2>
+<script>
+    function tinh(n) {
+        var flag = true;
+
+        if (n < 2) {
+            flag = false;
+        } else if (n == 2) {
+            flag = true;
+        } else if (n % 2 == 0) {
+            flag = false;
+        } else {
+            for (var i = 3; i < Math.sqrt(n); i += 2) {
+                if (n % i == 0) {
+                    flag = false;
+                    break;
+                }
+            }
+        }
+        if (flag == true) {
+            document.getElementById("kq").innerHTML =  n + " là số nguyên tố  <br/>";
+        } else {
+            document.getElementById("kq").innerHTML =(n + " không phải là số nguyên tố  <br/>");
+        }
+    }
+    function xuly() {
+        var input = document.getElementById("input").value ;
+        var result = tinh(input) ;
+    }
+
+
+</script>
+</body>
+</html>
