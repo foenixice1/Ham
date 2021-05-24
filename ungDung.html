@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+
+
+    input[type=text] {
+      width: 40%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      resize: vertical;
+    }
+
+
+    input[type='submit'],
+    button,
+    [aria-label] {
+      cursor: pointer;
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+    }
+
+    input[type=submit]:hover {
+      background-color: #45a049;
+    }
+
+
+
+    table {
+      border-collapse: collapse;
+      width: 50%;
+    }
+
+    th {
+      text-align: center;
+      padding: 8px;
+      font-weight: bold;
+    }
+
+    td {
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2
+    }
+  </style>
+</head>
+
+<body>
+<h1>ADD NEW PRODUCTS</h1>
+<input type="text" id="dauVao">
+<button type="button" value="NEW" onclick="add()">NEW</button>
+<h1>Display products</h1>
+<table id="hienthi">
+
+</table>
+<script>
+  let dssp = ['Sony Xperia', 'Samsung Galaxy', 'Nokia 6', 'Xiaomi Redmi Note 4', 'Apple iPhone 6s', 'Xiaomi Mi 5s Plus' , 'Apple iPhone 8 Plus', 'Fujitsu F-04E' ,'Oppo A71']
+  hienThi();
+
+  function hienThi() {
+    let str = '';
+    str += "<tr>\n" +
+            "    <td colspan=\"2\">ProductNames</td>\n" +
+            "    <td>" + dssp.length + " products</td>\n" +
+            "</tr>"
+    for (let i = 0; i < dssp.length; i++) {
+      str += "    <tr>\n" +
+              "        <td>" + dssp[i] + "</td>\n" +
+              "        <td><button onclick='edit(" + i + ")'>Edit</button></td>\n" +
+              "        <td><button>Delete</button></td>\n" +
+              "    </tr>"
+    }
+    document.getElementById('hienthi').innerHTML = str;
+  }
+
+  function add() {
+    let input = document.getElementById('dauVao').value;
+    dssp.push(input);
+    hienThi();
+  }
+
+  function edit(viTri) {
+    let moi = prompt('Nhập vào dữ liệu mới: ');
+    dssp[viTri] = moi;
+    hienThi();
+  }
+
+</script>
+</body>
+</html>
