@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi giữa feet và meters</title>
+</head>
+<body>
+<input type="number" id="doi" >
+<button type="button" value="feet sang meters" onclick="feet()">feet sang meters</button>
+<button type="button" value="meters sang feet" onclick="mete()">meters sang feet</button>
+<p>Chuyển đổi : <span id="xong"></span> </p>
+<script>
+    function feet() {
+        var mete = parseFloat(document.getElementById("doi").value);
+        feet = 3.279 * mete ;
+        document.getElementById("xong").innerHTML = feet + ' F' ;
+    }
+    function mete() {
+        var feet = parseFloat(document.getElementById("doi").value) ;
+        mete = 0.305 * feet ;
+        document.getElementById("xong").innerHTML = mete + ' M' ;
+    }
+
+</script>
+</body>
+</html>
