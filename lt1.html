@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập 1</title>
+<!--  <script>-->
+<!--  Bai1-->
+<!--    function Mess() {-->
+<!--      alert('Xin chào')-->
+<!--    }-->
+<!--  </script>-->
+<!--  Bai2-->
+<!--  <script>-->
+<!--    function doiso(num) {-->
+<!--      num +=1 ;-->
+<!--      return num;-->
+<!--    }-->
+<!--    var num = parseInt(prompt('Nhập vào đối số :'))-->
+<!--  </script>-->
+</head>
+<body>
+<!--Bai1-->
+<!--<script>-->
+<!--  var Mess = Mess('Xin chào') ;-->
+<!--</script>-->
+
+
+<!--Bai2-->
+<!--<script>-->
+<!--  var num = doiso(num) ;-->
+<!--  alert(num)-->
+<!--</script>-->
+
+
+
+<!--Bai3-->
+<!--<script>-->
+<!--  let a = +prompt('Nhập vào số a '),-->
+<!--      b = +prompt('Nhập vào số b') ;-->
+<!--  function sosanh() {-->
+<!--    if ( a > b ) {-->
+<!--      alert('Số ' + a + ' lớn hơn ' + ' số ' + b);-->
+<!--      return ;-->
+<!--    } else  {-->
+<!--      var tong = a + b-->
+<!--      alert('Tổng của hai số à : ' + tong)-->
+<!--    }-->
+<!--  }-->
+<!--  var rel = sosanh(a,b) ;-->
+
+<!--</script>-->
+
+
+
+<!--Bai4-->
+<!--<script>-->
+<!--  function addNumbers() {-->
+<!--    alert(result);-->
+<!--    firstNum = 4;-->
+<!--    secondNum = 8;-->
+<!--    result = firstNum + secondNum;-->
+<!--    return result;-->
+<!--  }-->
+<!--  result = 0;-->
+<!--  result = addNumbers();-->
+<!--  alert(result);-->
+<!--</script>-->
+
+
+<script>
+
+  let mang1 = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe' ,'Regulus'];
+  let mang2 = [ 'Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+  let chuoi = prompt("Nhập vào chuỗi cần tìm: ");
+
+  function timKiem(chuoi) {
+    let dauRa = -1;
+    for (let i = 0; i < mang1.length; i++) {
+      if (chuoi == mang1[i]) {
+        dauRa = i;
+      }
+    }
+    return dauRa;
+  }
+
+  if (timKiem(chuoi) == -1) {
+    alert("Không có trong mảng!");
+  } else {
+    alert(mang2[timKiem(chuoi)]);
+  }
+</script>
+
+</body>
+</html>
